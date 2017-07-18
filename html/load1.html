@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+           list-style: none;
+       }
+        #forWard{
+            width:520px;
+            height:400px;
+            border:2px solid deepskyblue;
+            margin: auto;
+            position: absolute;
+            top:50%;
+            left:0;
+            right:0;
+            margin-top: -200px;
+        }
+        #distance{
+            width:250px;
+            height:400px;
+            float: left;
+            margin-top: 20px;
+        }
+        #distance li{
+            width:100px;
+            height: 20px;
+            background-color: #6A5ACD;
+            border-bottom: 1px solid gainsboro;
+            margin: auto;
+        }
+        #distance li:first-child{
+            /*background-color: #f7a35c;*/
+            width:0px;
+            height:0px;
+            background-color: white;
+            border-left: 60px solid rgba(12,12,12,0);
+            border-right: 60px solid rgba(12,12,12,0);
+            border-top: 0px solid rgba(12,12,12,0);
+            border-bottom: 35px solid rgba(106,90,205,1);
+            margin-bottom: 1px;
+        }
+        #speed{
+            width:250px;
+            height: 400px;
+            border-left: 2px solid slateblue;
+            float: right;
+            position: relative;
+        }
+        #circle{
+            width:200px;
+            height:200px;
+            background-color: #000000;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+        }
+        #circleCenter{
+            width:30px;
+            height:30px;
+            background-color: #2c3c8f;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index: 3;
+        }
+        #pointer{
+            width:10px;
+            height:95px;
+            background-color: gold;
+            position: absolute;
+            margin: auto;
+            left:0;
+            right:0;
+            top:15px;
+            border-radius: 50%/90% 50% 5px 5px;
+            transform-origin: center 90%  ;
+            transform: rotate(-90deg);
+            z-index: 3;
+        }
+        #arbox{
+            width:210px;
+            height: 110px;
+            background-color: white;
+            margin: 105px auto;
+            position: relative;
+            left:-5px;
+            z-index: 2;
+        }
+        #reduce{
+            width:40px;
+            height: 40px;
+            background-color: grey;
+            border-radius: 50%;
+            position: absolute;
+            top:10px;
+            left:10px;
+        }
+        #reduce:after{
+             width:30px;
+             height:5px;
+             background-color: white;
+             content: '';
+             position: absolute;
+             margin: auto;
+             left:0;
+             right:0;
+             top:0;
+             bottom:0;
+         }
+        #add{
+            width:40px;
+            height:40px;
+            background-color: grey;
+            border-radius: 50%;
+            position: absolute;
+            top:10px;
+            right:10px;
+        }
+       #add:after{
+           width:30px;
+           height:5px;
+           background-color: white;
+           content: '';
+           position: absolute;
+           margin: auto;
+           left:0;
+           right:0;
+           top:0;
+           bottom:0;
+       }
+       #add:before{
+           width:30px;
+           height:5px;
+           background-color: white;
+           content: '';
+           position: absolute;
+           margin: auto;
+           left:0;
+           right:0;
+           top:0;
+           bottom:0;
+           transform: rotate(90deg);
+       }
+    </style>
+</head>
+<body>
+  <div id="forWard">
+      <ul id="distance">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+      <div id="speed">
+          <div id="circle">
+              <span id="circleCenter"></span>
+              <span id="pointer"></span>
+              <div id="arbox">
+                  <span id="reduce"></span>
+                  <span id="add"></span>
+              </div>
+          </div>
+      </div>
+  </div>
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<script>
+    var li=$("ul li");
+    console.log(li.length);
+    li.click(function () {
+        var dex=$(this).index();
+        console.log(dex);
+        $(this).css("background-color","green").prevAll().css("background-color","#6A5ACD");
+        $(this).nextAll().css("background-color","green");
+        $("li:first-child").css("background-color","white");
+        if(dex==0)
+        {
+            $("li:first-child").css("border-bottom","35px solid green");
+        }
+        else{
+            $("li:first-child").css("border-bottom","35px solid rgba(106,90,205,1)");
+        }
+        console.log("当前下标为："+dex+"运动速度为："+(li.length-dex)*10);
+    })
+    var i=-90;
+    $("#add").click(function () {
+        i+=45;
+        if(i<=90 && i>=-90)
+        {
+            $("#pointer").css("transform","rotate("+i+"deg)");
+            console.log(i);
+        }
+    })
+    console.log($("#pointer").css("transform"));
+    $("#reduce").click(function () {
+        i-=45;
+        if(i>-90 && i<90)
+        {
+            $("#pointer").css("transform","rotate("+i+"deg)");
+            console.log(i);
+        }
+    })
+</script>
+</body>
+</html>

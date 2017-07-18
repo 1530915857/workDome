@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<input type="button" class="box" value="1"></input>
+<script>
+    var m={
+        init:function()
+    {
+        this.n=0;
+        this.fun1();
+    },
+    fun1:function () {
+        this.click();
+        console.log(this.n);
+    },
+        click:function () {
+            var that=this;
+            $(".baox").click(function ()
+            {
+                that.n=$(this).text();console.logthiat.log(tha他,n);
+            });
+
+        }
+    }
+    m.init();
+</script>
+</body>
+</html>

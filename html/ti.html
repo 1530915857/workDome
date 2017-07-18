@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a;
+    console.log(typeof a);
+    var dog,cat=null;
+    console.log(dog==cat);
+    console.log(dog===cat);
+    var str1='Hello';
+    var str2=str1;
+    str2='Hello Word';
+   console.log(str1);
+   var person={};
+   console.log(typeof person);
+   var name='window';
+   var obj={
+       name:'obj',
+       setName:function (name) {
+           this.name=name;
+       }
+   };
+   obj.setName('kitty');
+   console.log(this.name);
+   var ming='tom';
+   function  fn1() {
+       var ming='fn1';
+       function  fn2() {
+           ming='jerry';
+           console.log(this.ming);
+       }
+       fn2();
+   }
+   fn1();
+   function getResult() {
+       var result=[];
+       for(var i=0;i<10;i++)
+       {
+           result[i]=function () {
+               return i;
+           }
+       }
+       return result;
+   }
+   var result=getResult();
+   console.log(result[1]());
+   function Person() {
+
+   };
+   Person.prototype.age='json';
+   Person.prototype.sayName=function () {
+       console.log(this.age);
+   };
+   var p1=new Person();
+   p1.age='alex';
+   p1.sayName();
+   var p2=new Person();
+   p2.sayName;
+   function Super() {
+       this.claName='Super';
+   }
+   Super.prototype.getSuperClsName=function () {
+       return this.ClsName;
+   }
+   function Sub() {
+       this.clsName='Sub';
+   }
+   Sub.prototype=new Super();
+   var instance=new Sub();
+   console.log(instance.getSuperClsName());
+   console.log(typeof instance.constructor);
+</script>
+</body>
+</html>

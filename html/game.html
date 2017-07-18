@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>分类选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        div{
+            width: 130px;
+            height:550px;
+            background: gainsboro;
+            position: relative;
+        }
+        #down{
+            width:110px;
+            height:auto;
+            position: absolute;
+            top:0;
+        }
+        #down li{
+            width:110px;
+            height:40px;
+            border-radius: 5px;
+            margin: 5px 15px;
+            color: white;
+            line-height: 40px;
+            /*font-weight: bold;*/
+            padding-left: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .up{
+            width:90px;
+            height:auto;
+            position: absolute;
+            top:0;
+            left:10px;
+        }
+        .up li{
+            width:90px;
+            height: 40px;
+            background: white;
+            line-height: 40px;
+            padding-left: 10px;
+            border-radius: 0px 5px 5px 0px;
+            margin: 5px 15px;
+            z-index: 2;
+        }
+        .up li.select{
+            background: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="down">
+            <li style="background:goldenrod;">事件</li>
+            <li style="background:darkcyan;">动作</li>
+            <li style="background:darkturquoise;">控制</li>
+            <li style="background:hotpink;">侦测</li>
+            <li style="background:seagreen;">运算</li>
+        </ul>
+        <ul class="up">
+            <li>事件</li>
+            <li>动作</li>
+            <li>控制</li>
+            <li>侦测</li>
+            <li>运算</li>
+        </ul>
+    </div>
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<script>
+    $(".up li").click(function(){
+//        alert("1");
+        index=$(this).index();
+        $(".up li").eq(index).addClass("select").siblings().removeClass("select");
+    })
+</script>
+</body>
+</html>

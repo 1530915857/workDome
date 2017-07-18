@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>元素距离顶部滚动事件</title>
+    <style>
+        #warp{
+            width:1000px;
+            height: 1500px;
+        }
+        #box{
+            width:150px;
+            height: 300px;
+            background: orange;
+            position: absolute;right: 0;
+            top:200px;
+        }
+    </style>
+</head>
+<body>
+<div id="warp"></div>
+<div id="box"></div>
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<script>
+    var toplearen=$("#box").offset().top;
+    $(window).scroll(function () {
+        var scolltop=$(document).scrollTop();
+//        alert(toplearen+scolltop);
+        $("#box").css({"top":scolltop+toplearen,"transition":"1.5s"});
+    });
+</script>
+</body>
+</html>

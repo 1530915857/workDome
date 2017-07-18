@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li class="closeOpt">你</li>
+    <li class="closeOpt">我</li>
+    <li class="closeOpt">他</li>
+    <li class="closeOpt clos">们</li>
+</ul>
+
+
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<script>
+    var liArray = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
+    for (var i = 0; i < liArray.length; i++) {
+        (function (i) {
+            var n = i;
+            liArray[i].onclick = function () {
+                if($(this).hasClass('clos')){
+                    alert("nibunengtianjia");
+                }
+            }
+        })(i)
+    }
+</script>
+</body>
+</html>

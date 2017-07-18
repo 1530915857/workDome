@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面关闭提示</title>
+</head>
+<body>
+
+<!--<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>-->
+<!--<script>-->
+    <!--$(window).bind("beforeunload",function () {-->
+        <!--return "你的数据可能没有保存";-->
+    <!--})-->
+<!--</script>-->
+<script>
+    window.onbeforeunload=function (event) {
+        return "你有数据未保存";
+    }
+</script>
+</body>
+</html>

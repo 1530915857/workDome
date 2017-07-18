@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height: 300px;
+            background-color: #f7a35c;
+            position: relative;
+            overflow: hidden;
+        }
+        span{
+            width:200px;
+            height: 50px;
+            background-color: grey;
+            position: absolute;
+            top:300px;
+            left:0;
+            transition: top 2s;
+        }
+        div:hover span{
+            top:250px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span></span>
+</div>
+</body>
+</html>

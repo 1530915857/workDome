@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="width: 200px;height: 200px;background-image: url('../img/speed1.png');background-size: 100% 100%;"></div>
+<button>dianjiyixia</button>
+<span>jianjianjian</span>
+<script src="http://og3i9vpbe.bkt.clouddn.com/jQ/jquery-1.11.3.js"></script>
+<script>
+    var i=1;
+$("button").click(function () {
+    i++;
+    if(i<=5)
+    {
+        var back="url('../img/speed"+i+".png')"
+        $("div").css("background-image",back);
+    }
+
+})
+    $("span").click(function () {
+        i--;
+        if(i>=1)
+        {
+            var back="url('../img/speed"+i+".png')"
+            $("div").css("background-image",back);
+        }
+
+    })
+</script>
+</body>
+</html>
